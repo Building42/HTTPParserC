@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = "HTTPParserC"
-  s.version           = "2.7.2"
+  s.version           = "2.7.3"
   s.summary           = "HTTP message parser written in C"
   s.description       = <<-DESC
   HTTPParser is a HTTP message parser written in C. It parses both requests and responses.
@@ -14,15 +14,15 @@ Pod::Spec.new do |s|
   s.license           = "MIT"
   s.author            = "Building42"
 
-  s.source            = { :git => "https://github.com/Building42/HTTPParserC.git", :tag => s.version, :submodules => true }
-  s.source_files      = '**/http_parser.{h,c}'
-  s.preserve_paths    = '**/http_parser.{h,c}'
-  s.pod_target_xcconfig = {'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/HTTPParserC/http-parser/**'}
+  s.source            = { :git => "https://github.com/Building42/HTTPParserC.git", :tag => s.version }
+  s.source_files      = 'Sources/http_parser.{h,c}'
+  s.preserve_paths    = 'Sources/http_parser.{h,c}'
+  s.pod_target_xcconfig = {'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/HTTPParserC/Sources/**'}
 
   s.requires_arc      = false
 
   s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.10'
-  s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
+  s.tvos.deployment_target = '9.0'
+  s.osx.deployment_target = '10.6'
 end
