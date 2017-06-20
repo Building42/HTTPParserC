@@ -1,0 +1,28 @@
+language: objective-c
+osx_image: xcode8.3
+branches:
+  only:
+    - master
+env:
+  global:
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - PROJECT=HTTPParserC.xcodeproj
+  - IOS_FRAMEWORK_SCHEME="HTTPParserC iOS"
+  - TVOS_FRAMEWORK_SCHEME="HTTPParserC tvOS"
+  - MACOS_FRAMEWORK_SCHEME="HTTPParserC macOS"
+  matrix:
+    - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"   SCHEME="$IOS_FRAMEWORK_SCHEME"
+    - DESTINATION="OS=9.0,name=iPad Air"           SCHEME="$IOS_FRAMEWORK_SCHEME"
+    - DESTINATION="OS=10.2,name=Apple TV 1080p"    SCHEME="$TVOS_FRAMEWORK_SCHEME"
+    - DESTINATION="arch=x86_64"                    SCHEME="$MACOS_FRAMEWORK_SCHEME"
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+
+  # Build Framework in Debug mode
+  - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
+
+  # Build Framework in Release mode
+  - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty;
