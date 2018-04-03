@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = "HTTPParserC"
-  s.version           = "2.7.3"
+  s.version           = "2.8.1"
   s.summary           = "HTTP message parser written in C"
   s.description       = <<-DESC
   HTTPParser is a HTTP message parser written in C. It parses both requests and responses.
