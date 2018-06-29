@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9.3
+osx_image: xcode9.4
 
 branches:
   only:
@@ -12,18 +12,22 @@ env:
     - PROJECT=HTTPParserC.xcodeproj
   matrix:
     # Latest devices
-    - DESTINATION="platform=iOS Simulator,name=iPhone 8 Plus"           SCHEME="HTTPParserC iOS"
-    - DESTINATION="platform=iOS Simulator,name=iPad Pro (12.9-inch)"    SCHEME="HTTPParserC iOS"
-    - DESTINATION="platform=tvOS Simulator,name=Apple TV"               SCHEME="HTTPParserC tvOS"
-    - DESTINATION="platform=macOS,arch=x86_64"                          SCHEME="HTTPParserC macOS"
+    - DESTINATION="platform=iOS Simulator,name=iPhone X"                  SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPad Pro (12.9-inch)"      SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
+    - DESTINATION="platform=tvOS Simulator,name=Apple TV"                 SCHEME="HTTPParserC tvOS"     RUN_TESTS="NO"
+    - DESTINATION="platform=macOS,arch=x86_64"                            SCHEME="HTTPParserC macOS"    RUN_TESTS="NO"
 
     # Older devices
-    - DESTINATION="platform=iOS Simulator,name=iPad 2,OS=8.1"           SCHEME="HTTPParserC iOS"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 5s,OS=8.1"        SCHEME="HTTPParserC iOS"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=9.0"         SCHEME="HTTPParserC iOS"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 6 Plus,OS=10.0"   SCHEME="HTTPParserC iOS"
+    - DESTINATION="platform=iOS Simulator,name=iPad 2,OS=8.1"             SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 5s,OS=8.1"          SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=9.3"           SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1"   SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.4"          SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
 
 before_install:
+  - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - pod --version
   - xcodebuild -version
   - xcodebuild -showsdks
 
@@ -36,3 +40,8 @@ script:
 
   # Build in Release mode
   - xcodebuild clean build -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+
+  # Run the tests
+  - if [ $RUN_TESTS == "YES" ]; then
+      xcodebuild test -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES | xcpretty -c;
+    fi
