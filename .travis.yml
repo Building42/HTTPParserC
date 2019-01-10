@@ -12,7 +12,7 @@ env:
     - PROJECT=HTTPParserC.xcodeproj
   matrix:
     # Latest devices
-    - DESTINATION="platform=iOS Simulator,name=iPhone XS"                 SCHEME="HTTPParserC iOS"      RUN_TESTS="YES"
+    - DESTINATION="platform=iOS Simulator,name=iPhone XS"                 SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
     - DESTINATION="platform=iOS Simulator,name=iPhone XR"                 SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
     - DESTINATION="platform=iOS Simulator,name=iPad Pro (12.9-inch)"      SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
     - DESTINATION="platform=tvOS Simulator,name=Apple TV"                 SCHEME="HTTPParserC tvOS"     RUN_TESTS="NO"
