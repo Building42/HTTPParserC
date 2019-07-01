@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'HTTPParserC'
-  s.version = '2.9.0'
+  s.version = '2.9.2'
   s.license = 'MIT'
 
   s.summary = 'HTTP message parser written in C'
