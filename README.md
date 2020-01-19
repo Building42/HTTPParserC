@@ -47,7 +47,7 @@ To integrate the HTTP Parser C library into your Xcode project using CocoaPods, 
 
 ```ruby
 use_frameworks!
-pod 'Telegraph'
+pod 'HTTPParserC'
 ```
 
 Then, run the following command:
