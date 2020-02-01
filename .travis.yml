@@ -12,18 +12,18 @@ env:
     - PROJECT=HTTPParserC.xcodeproj
   matrix:
     # Latest devices
-    - DESTINATION="platform=iOS Simulator,name=iPhone XS"                 SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=iOS Simulator,name=iPhone XR"                 SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=iOS Simulator,name=iPad Pro (12.9-inch)"      SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=tvOS Simulator,name=Apple TV"                 SCHEME="HTTPParserC tvOS"     RUN_TESTS="NO"
-    - DESTINATION="platform=macOS,arch=x86_64"                            SCHEME="HTTPParserC macOS"    RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone XS"                 SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone XR"                 SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPad Pro (12.9-inch)"      SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=tvOS Simulator,name=Apple TV"                 SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=macOS,arch=x86_64"                            SCHEME="HTTPParserC"      RUN_TESTS="NO"
 
     # Older devices
-    - DESTINATION="platform=iOS Simulator,name=iPad 2,OS=8.1"             SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 5s,OS=8.4"          SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=9.3"           SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1"   SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.4"          SCHEME="HTTPParserC iOS"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPad 2,OS=8.1"             SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 5s,OS=8.4"          SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=9.3"           SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1"   SCHEME="HTTPParserC"      RUN_TESTS="NO"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.4"          SCHEME="HTTPParserC"      RUN_TESTS="NO"
 
 before_install:
   # Install XCPretty
