@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
   s.documentation_url = 'https://github.com/nodejs/http-parser'
 
   s.source = { :git => "https://github.com/Building42/HTTPParserC.git", :tag => s.version }
-  s.source_files = 'Sources/HTTPParserC/http_parser.{h,c}'
-  s.preserve_paths = 'Sources/HTTPParserC/http_parser.{h,c}'
+  s.source_files = 'Sources/http_parser.{h,c}'
+  s.preserve_paths = 'Sources/http_parser.{h,c}'
 
   s.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/HTTPParserC/Sources/**' }
   s.requires_arc = false

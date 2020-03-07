@@ -16,7 +16,6 @@
 /* Begin PBXFileReference section */
 		8247321A23E633BC00A9BAFA /* HTTPParserC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPParserC.h; sourceTree = "<group>"; };
 		8247321B23E633BC00A9BAFA /* http_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http_parser.h; sourceTree = "<group>"; };
-		8247321C23E633BC00A9BAFA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		8247321D23E633BC00A9BAFA /* http_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http_parser.c; sourceTree = "<group>"; };
 		"HTTPParserC::HTTPParserC::Product" /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -36,21 +35,12 @@
 		8247321823E633BC00A9BAFA /* HTTPParserC */ = {
 			isa = PBXGroup;
 			children = (
-				8247321923E633BC00A9BAFA /* include */,
+				8247321A23E633BC00A9BAFA /* HTTPParserC.h */,
+				8247321B23E633BC00A9BAFA /* http_parser.h */,
 				8247321D23E633BC00A9BAFA /* http_parser.c */,
 			);
 			name = HTTPParserC;
 			path = Sources/HTTPParserC;
-			sourceTree = "<group>";
-		};
-		8247321923E633BC00A9BAFA /* include */ = {
-			isa = PBXGroup;
-			children = (
-				8247321A23E633BC00A9BAFA /* HTTPParserC.h */,
-				8247321B23E633BC00A9BAFA /* http_parser.h */,
-				8247321C23E633BC00A9BAFA /* module.modulemap */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		OBJ_11 /* Products */ = {

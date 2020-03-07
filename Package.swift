@@ -14,11 +14,13 @@ let package = Package(
         .library(
             name: "HTTPParserC",
             targets: ["HTTPParserC"]
-        ),
+        )
     ],
     targets: [
         .target(
-            name: "HTTPParserC"
+            name: "HTTPParserC",
+            path: "Sources",
+            publicHeadersPath: ""
         )
     ]
 )

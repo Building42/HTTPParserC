@@ -1,18 +1,10 @@
-# OS
+# OSX
 .DS_Store
 .Trashes
 *.swp
 *.lock
 
-*.mode1v3
-*.mode2v3
-*.moved-aside
-*.pbxuser
-*.perspectivev3
-
 # Xcode
-.build/
-.swiftpm/
 build/
 DerivedData/
 xcuserdata
@@ -24,19 +16,10 @@ xcuserdata
 *.pbxuser
 *.perspectivev3
 
-# Carthage
-Carthage/Build
-
-# CocoaPods
-Pods/
-
-# Third party tools
-.idea/
-FauxPasConfig/
-
-# Objective-C / Swift
-*.hmap
-*.ipa
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
 
 # Exceptions
 !default.pbxuser

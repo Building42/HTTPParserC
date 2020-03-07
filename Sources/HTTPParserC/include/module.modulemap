@@ -1,4 +1,0 @@
-module HTTPParserC {
-  umbrella header "HTTPParserC.h"
-  export *
-}
