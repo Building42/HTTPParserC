@@ -1,0 +1,51 @@
+name: "HTTPParserC CI"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_11.3.1.app/Contents/Developer
+  PROJECT: HTTPParserC.xcodeproj
+  SCHEME: HTTPParserC
+
+jobs:
+  iOS:
+    name: Build iOS
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        destination: ["iPhone 11", "iPad Air (3rd generation)"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build iOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -project "$PROJECT" -scheme "$SCHEME" -destination "platform=iOS Simulator,name=${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+
+  tvOS:
+    name: Build tvOS
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        destination: ["Apple TV", "Apple TV 4K"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build tvOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -project "$PROJECT" -scheme "$SCHEME" -destination "platform=tvOS Simulator,name=${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+
+  macOS:
+    name: Build macOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build macOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -project "$PROJECT" -scheme "$SCHEME" -destination "platform=macOS,arch=x86_64" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
