@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8247321E23E633BC00A9BAFA /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 8247321D23E633BC00A9BAFA /* http_parser.c */; };
-		8247322023E633EA00A9BAFA /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 8247321B23E633BC00A9BAFA /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8247322123E633F500A9BAFA /* HTTPParserC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8247321A23E633BC00A9BAFA /* HTTPParserC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		822D1888241462E60000E4A8 /* HTTPParserC.h in Headers */ = {isa = PBXBuildFile; fileRef = 822D1885241462E30000E4A8 /* HTTPParserC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		822D1889241462EA0000E4A8 /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 822D1886241462E30000E4A8 /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		822D188A241462EE0000E4A8 /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 822D1887241462E30000E4A8 /* http_parser.c */; };
 		OBJ_25 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8247321A23E633BC00A9BAFA /* HTTPParserC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPParserC.h; sourceTree = "<group>"; };
-		8247321B23E633BC00A9BAFA /* http_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http_parser.h; sourceTree = "<group>"; };
-		8247321D23E633BC00A9BAFA /* http_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = http_parser.c; sourceTree = "<group>"; };
+		822D1885241462E30000E4A8 /* HTTPParserC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPParserC.h; sourceTree = "<group>"; };
+		822D1886241462E30000E4A8 /* http_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = http_parser.h; sourceTree = "<group>"; };
+		822D1887241462E30000E4A8 /* http_parser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = http_parser.c; sourceTree = "<group>"; };
 		"HTTPParserC::HTTPParserC::Product" /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,15 +32,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8247321823E633BC00A9BAFA /* HTTPParserC */ = {
+		822D1884241462E30000E4A8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8247321A23E633BC00A9BAFA /* HTTPParserC.h */,
-				8247321B23E633BC00A9BAFA /* http_parser.h */,
-				8247321D23E633BC00A9BAFA /* http_parser.c */,
+				822D1885241462E30000E4A8 /* HTTPParserC.h */,
+				822D1886241462E30000E4A8 /* http_parser.h */,
+				822D1887241462E30000E4A8 /* http_parser.c */,
 			);
-			name = HTTPParserC;
-			path = Sources/HTTPParserC;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		OBJ_11 /* Products */ = {
@@ -55,18 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
-				OBJ_7 /* Sources */,
+				822D1884241462E30000E4A8 /* Sources */,
 				OBJ_11 /* Products */,
 			);
 			sourceTree = "<group>";
-		};
-		OBJ_7 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				8247321823E633BC00A9BAFA /* HTTPParserC */,
-			);
-			name = Sources;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -75,8 +66,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8247322023E633EA00A9BAFA /* http_parser.h in Headers */,
-				8247322123E633F500A9BAFA /* HTTPParserC.h in Headers */,
+				822D1888241462E60000E4A8 /* HTTPParserC.h in Headers */,
+				822D1889241462EA0000E4A8 /* http_parser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				8247321E23E633BC00A9BAFA /* http_parser.c in Sources */,
+				822D188A241462EE0000E4A8 /* http_parser.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
