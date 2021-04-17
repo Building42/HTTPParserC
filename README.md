@@ -1,7 +1,7 @@
 HTTP Parser
 ===========
 
-![HTTPParserC CI](https://github.com/Building42/HTTPParserC/workflows/HTTPParserC%20CI/badge.svg)
+[![HTTPParserC CI](https://github.com/Building42/HTTPParserC/workflows/HTTPParserC%20CI/badge.svg)](https://github.com/Building42/HTTPParserC/actions)
 [![Version](https://img.shields.io/cocoapods/v/HTTPParserC.svg)](https://cocoapods.org/pods/HTTPParserC)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/HTTPParserC.svg)](https://cocoapods.org/pods/HTTPParserC)
