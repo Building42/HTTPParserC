@@ -1,7 +1,7 @@
 HTTP Parser
 ===========
 
-[![HTTPParserC CI](https://github.com/Building42/HTTPParserC/workflows/HTTPParserC%20CI/badge.svg)](https://github.com/Building42/HTTPParserC/actions)
+[![HTTPParserC CI](https://github.com/Building42/HTTPParserC/actions/workflows/ci.yml/badge.svg)](https://github.com/Building42/HTTPParserC/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/cocoapods/v/HTTPParserC.svg)](https://cocoapods.org/pods/HTTPParserC)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/HTTPParserC.svg)](https://cocoapods.org/pods/HTTPParserC)
@@ -35,45 +35,44 @@ The parser extracts the following information from HTTP messages:
 
 ## Installation
 
-### CocoaPods
+### Swift Package Manager
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code.
 
-```bash
-$ gem install cocoapods
-```
+Xcode 11 or later has integrated support for the Swift Package Manager. You can add Telegraph to your project by choosing the File - Swift Packages - Add Package Dependency option. Use the repository url as specified below and select the version you want to use.
 
-To integrate the HTTP Parser C library into your Xcode project using CocoaPods, specify it in your `Podfile`:
+Or you can manually add a `Package.swift` file to your project with:
 
-```ruby
-use_frameworks!
-pod 'HTTPParserC'
-```
-
-Then, run the following command:
-
-```bash
-$ pod install
+```swift
+dependencies: [
+    .package(url: "https://github.com/Building42/HTTPParserC.git")
+]
 ```
 
 ### Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate HTTPParserC into your Xcode project using Carthage, specify it in your `Cartfile`:
+Carthage is a decentralized dependency manager that builds your dependencies into binary frameworks.
 
 ```ogdl
 github "Building42/HTTPParserC"
 ```
 
-Run `carthage update` to build the framework and drag the built `HTTPParserC.framework` into your Xcode project.
+See [Carthage - Quick Start](https://github.com/Carthage/Carthage/#quick-start) for more information.
+
+### CocoaPods
+
+CocoaPods is a dependency manager for Cocoa projects that makes dependencies a part of your workspace.
+
+```ruby
+source 'https://cdn.cocoapods.org/'
+use_frameworks!
+
+target '<Your Target Name>'
+
+pod 'HTTPParserC'
+```
+
+See [CocoaPods - Getting Started](https://guides.cocoapods.org/using/getting-started.html) for more information.
 
 ## Documentation
 Visit https://github.com/nodejs/http-parser for more information
