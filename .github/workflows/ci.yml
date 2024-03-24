@@ -9,7 +9,6 @@ on:
       - main
 
 env:
-  DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
   PROJECT: HTTPParserC.xcodeproj
   SCHEME: HTTPParserC
 
@@ -19,9 +18,16 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        destination: ["iPhone 8", "iPhone 12", "iPad Air (3rd generation)", "iPad Pro (9.7-inch)"]
+        destination: ["iPhone 8", "iPhone 14 Pro", "iPad Air (5th generation)", "iPad Pro (9.7-inch)"]
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
       - name: Build iOS
         run: |
           set -o pipefail
@@ -32,9 +38,16 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        destination: ["Apple TV", "Apple TV 4K"]
+        destination: ["Apple TV", "Apple TV 4K (3rd generation)"]
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
       - name: Build tvOS
         run: |
           set -o pipefail
@@ -44,7 +57,14 @@ jobs:
     name: Build macOS
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
       - name: Build macOS
         run: |
           set -o pipefail
