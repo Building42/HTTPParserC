@@ -6,7 +6,7 @@ HTTP Parser
 [![License](https://img.shields.io/cocoapods/l/HTTPParserC.svg)](https://cocoapods.org/pods/HTTPParserC)
 [![Platform](https://img.shields.io/cocoapods/p/HTTPParserC.svg)](https://cocoapods.org/pods/HTTPParserC)
 
-HTTP message parser written in C, now based on llhttp. It parses both requests and
+HTTP message parser written in C based on [llhttp](https://github.com/nodejs/llhttp). It parses both requests and
 responses. The parser is designed to be used in performance HTTP
 applications. It does not make any syscalls nor allocations, it does not
 buffer data, it can be interrupted at anytime. Depending on your

@@ -23,9 +23,9 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/HTTPParserC/Sources/**' }
   s.requires_arc = false
 
-  s.ios.deployment_target = '9.0'
-  s.macos.deployment_target = '10.6'
-  s.tvos.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
+  s.macos.deployment_target = '10.13'
+  s.tvos.deployment_target = '12.0'
   s.visionos.deployment_target = '1.0'
-  s.watchos.deployment_target = '2.0'
+  s.watchos.deployment_target = '4.0'
 end
