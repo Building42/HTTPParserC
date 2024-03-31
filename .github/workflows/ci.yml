@@ -38,7 +38,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        destination: ["Apple TV", "Apple TV 4K (3rd generation)"]
+        destination: ["Apple TV 4K (3rd generation)"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
