@@ -156,14 +156,14 @@ llhttp_errno_t llhttp_finish(llhttp_t* parser) {
   }
 
   switch (parser->finish) {
-    case HTTP_FINISH_SAFE_WITH_CB:
+    case LLHTTP_FINISH_SAFE_WITH_CB:
       CALLBACK_MAYBE(parser, on_message_complete);
       if (err != HPE_OK) return err;
 
     /* FALLTHROUGH */
-    case HTTP_FINISH_SAFE:
+    case LLHTTP_FINISH_SAFE:
       return HPE_OK;
-    case HTTP_FINISH_UNSAFE:
+    case LLHTTP_FINISH_UNSAFE:
       parser->reason = "Invalid EOF state";
       return HPE_INVALID_EOF_STATE;
     default:
@@ -221,31 +221,31 @@ const char* llhttp_get_error_pos(const llhttp_t* parser) {
 
 
 const char* llhttp_errno_name(llhttp_errno_t err) {
-#define HTTP_ERRNO_GEN(CODE, NAME, _) case HPE_##NAME: return "HPE_" #NAME;
+#define LLHTTP_ERRNO_GEN(CODE, NAME, _) case HPE_##NAME: return "HPE_" #NAME;
   switch (err) {
-    HTTP_ERRNO_MAP(HTTP_ERRNO_GEN)
+    LLHTTP_ERRNO_MAP(LLHTTP_ERRNO_GEN)
     default: abort();
   }
-#undef HTTP_ERRNO_GEN
+#undef LLHTTP_ERRNO_GEN
 }
 
 
 const char* llhttp_method_name(llhttp_method_t method) {
-#define HTTP_METHOD_GEN(NUM, NAME, STRING) case HTTP_##NAME: return #STRING;
+#define LLHTTP_METHOD_GEN(NUM, NAME, STRING) case LLHTTP_##NAME: return #STRING;
   switch (method) {
-    HTTP_ALL_METHOD_MAP(HTTP_METHOD_GEN)
+    LLHTTP_ALL_METHOD_MAP(LLHTTP_METHOD_GEN)
     default: abort();
   }
-#undef HTTP_METHOD_GEN
+#undef LLHTTP_METHOD_GEN
 }
 
 const char* llhttp_status_name(llhttp_status_t status) {
-#define HTTP_STATUS_GEN(NUM, NAME, STRING) case HTTP_STATUS_##NAME: return #STRING;
+#define LLHTTP_STATUS_GEN(NUM, NAME, STRING) case LLHTTP_STATUS_##NAME: return #STRING;
   switch (status) {
-    HTTP_STATUS_MAP(HTTP_STATUS_GEN)
+    LLHTTP_STATUS_MAP(LLHTTP_STATUS_GEN)
     default: abort();
   }
-#undef HTTP_STATUS_GEN
+#undef LLHTTP_STATUS_GEN
 }
 
 
